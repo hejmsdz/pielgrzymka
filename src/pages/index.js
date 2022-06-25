@@ -22,12 +22,12 @@ const days = [
     {
         number: 4,
         date: "2022-07-05",
-        celebration: "Wskrzeszenie Łazarza",
+        celebration: "Wspomnienie św. Marty, Marii i Łazarza",
     },
     {
         number: 5,
         date: "2022-07-06",
-        celebration: "Prymat św. Piotra Apostoła",
+        celebration: "Wspomnienie św. Piotra Apostoła",
     },
     {
         number: 6,
