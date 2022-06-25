@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import "@picocss/pico";
 // import "../styles/main.scss";
 
@@ -56,11 +57,11 @@ const IndexPage = () => {
                         <strong className="day">Dzień {day.number}</strong>
                         <div className="celebration">{day.celebration}</div>
                         <div className="links">
-                            <a href={`/dzien/${day.number}/jutrznia`}>Jutrznia</a>
+                            <Link to={`/dzien/${day.number}/jutrznia`}>Jutrznia</Link>
                             <span className="divider" />
                             <a href="#">Msza Święta</a>
                             <span className="divider" />
-                            <a href={`/dzien/${day.number}/nieszpory`}>Nieszpory</a>
+                            <Link href={`/dzien/${day.number}/nieszpory`}>Nieszpory</Link>
                         </div>
                     </li>
                 ))}

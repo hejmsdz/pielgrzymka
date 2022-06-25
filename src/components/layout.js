@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby";
 import { MDXProvider } from "@mdx-js/react"
 import K from "./k"
 import W from "./w"
@@ -20,9 +21,9 @@ export default function Layout({ children }) {
     return (
         <MDXProvider components={shortcodes}>
             <main>
-                <a href="/">&larr; Wróć do spisu treści</a>
+                <Link to="/">&larr; Wróć do spisu treści</Link>
                 {children}
-                <a href="/">&larr; Wróć do spisu treści</a>
+                <Link to="/">&larr; Wróć do spisu treści</Link>
             </main>
         </MDXProvider>
     )
