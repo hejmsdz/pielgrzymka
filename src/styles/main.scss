@@ -1,0 +1,50 @@
+main {
+    max-width: 600px;
+    margin: 1em auto;
+    padding: 1em;
+}
+
+.links {
+    .divider::after {
+        content: ' • ';
+    }
+}
+
+section:not(.finalPrayer) {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+}
+
+.k::before {
+    content: 'K. ';
+    color: var(--del-color);
+    display: inline-block;
+    width: 1.5em;
+}
+.w::before {
+    content: 'W. ';
+    color: var(--del-color);
+    display: inline-block;
+    width: 1.5em;
+}
+
+.psalm, .canticle {
+    .verse {
+        margin-bottom: 0.5em;
+        &:nth-of-type(odd) {
+            margin-left: 1em;
+        }
+    }
+}
+
+.comment {
+    opacity: 0.5;
+}
+
+.intercession {
+    // margin-bottom: 0.5em;
+
+    .response {
+        font-style: italic;
+    }
+}

@@ -1,19 +1,27 @@
 module.exports = {
-  siteMetadata: {
-    title: `izrael`,
-    siteUrl: `https://www.yourdomain.tld`
-  },
-  plugins: ["gatsby-plugin-sass", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-mdx", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    siteMetadata: {
+        title: `izrael`,
+        siteUrl: `https://www.yourdomain.tld`
     },
-    __key: "pages"
-  }]
+    plugins: [
+        "gatsby-plugin-sass", {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                "icon": "src/images/icon.png"
+            }
+        }, {
+            resolve: "gatsby-plugin-mdx",
+            options: {
+                defaultLayouts: {
+                    default: require.resolve('./src/components/layout.js'),
+                }
+            },
+        }, {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                "name": "pages",
+                "path": "./src/pages/"
+            },
+            __key: "pages"
+        }]
 };
