@@ -48,25 +48,32 @@ const days = [
 ];
 
 const IndexPage = () => {
+    const today = new Date();
+
     return (
         <main>
             <title>Śpiewnik</title>
             <Toolbar />
             <h1>Śpiewnik</h1>
             <ul className="days">
-                {days.map((day) => (
-                    <li className="" key={day.number}>
-                        <strong className="day">Dzień {day.number}</strong>
-                        <div className="celebration">{day.celebration}</div>
-                        <div className="links">
-                            <Link to={`/dzien/${day.number}/jutrznia`}>Jutrznia</Link>
-                            <span className="divider" />
-                            <Link to={`/dzien/${day.number}/msza`}>Msza Święta</Link>
-                            <span className="divider" />
-                            <Link href={`/dzien/${day.number}/nieszpory`}>Nieszpory</Link>
-                        </div>
-                    </li>
-                ))}
+                {days.map((day) => {
+                    const date = new Date(day.date);
+                    const isPast = date < today;
+
+                    return (
+                        <li className={isPast ? 'past' : ''} key={day.number}>
+                            <strong className="day">Dzień {day.number}</strong>
+                            <div className="celebration">{day.celebration}</div>
+                            <div className="links">
+                                <Link to={`/dzien/${day.number}/jutrznia`}>Jutrznia</Link>
+                                <span className="divider" />
+                                <Link to={`/dzien/${day.number}/msza`}>Msza Święta</Link>
+                                <span className="divider" />
+                                <Link href={`/dzien/${day.number}/nieszpory`}>Nieszpory</Link>
+                            </div>
+                        </li>
+                    );
+                })}
             </ul>
         </main>
     );
