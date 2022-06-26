@@ -2,7 +2,7 @@ import React from 'react';
 import K from '../k';
 import W from '../w';
 
-export default ({ children }) => (
+export default ({ alleluja, children }) => (
     <div>
         <p>
             {children || (<>
@@ -16,8 +16,8 @@ export default ({ children }) => (
 
         <p>
             <div className="comment">Jeśli wierni mają się rozejść, dodaje się wezwanie:</div>
-            <K>Idźcie w pokoju Chrystusa.</K>
-            <W>Bogu niech będą dzięki.</W>
+            <K>Idźcie w pokoju Chrystusa. {alleluja && 'Alleluja, alleluja.'}</K>
+            <W>Bogu niech będą dzięki. {alleluja && 'Alleluja, alleluja.'}</W>
         </p>
     </div>
 );
