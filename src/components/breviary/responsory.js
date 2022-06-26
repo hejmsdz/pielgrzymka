@@ -7,7 +7,7 @@ export default ({ a, b, c }) => (
         <div class="w">{a} / {b}</div>
         <div class="k">{c}</div>
         <div class="w">{b}</div>
-        <div class="k">Chwała Ojcu i Synowi, i Duchowi Świętemu</div>
+        <div class="k">Chwała Ojcu i Synowi, i Duchowi Świętemu.</div>
         <div class="w">{a} / {b}</div>
     </section>
 );
