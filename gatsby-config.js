@@ -17,12 +17,6 @@ module.exports = {
             }
         },
         {
-            resolve: `gatsby-plugin-offline`,
-            options: {
-                precachePages: ['/dzien/*/*/'],
-            },
-        },
-        {
             resolve: "gatsby-plugin-mdx",
             options: {
                 defaultLayouts: {
@@ -40,5 +34,11 @@ module.exports = {
         },
         "gatsby-plugin-react-svg",
         "gatsby-plugin-sass",
+        {
+            resolve: `gatsby-plugin-offline`,
+            options: {
+                precachePages: ['/dzien/*/*'],
+            },
+        },
     ]
 };

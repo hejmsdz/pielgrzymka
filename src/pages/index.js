@@ -59,11 +59,11 @@ const IndexPage = () => {
                         <strong className="day">Dzień {day.number}</strong>
                         <div className="celebration">{day.celebration}</div>
                         <div className="links">
-                            <Link to={`/dzien/${day.number}/jutrznia/`}>Jutrznia</Link>
+                            <Link to={`/dzien/${day.number}/jutrznia`}>Jutrznia</Link>
                             <span className="divider" />
-                            <Link to={`/dzien/${day.number}/msza/`}>Msza Święta</Link>
+                            <Link to={`/dzien/${day.number}/msza`}>Msza Święta</Link>
                             <span className="divider" />
-                            <Link href={`/dzien/${day.number}/nieszpory/`}>Nieszpory</Link>
+                            <Link href={`/dzien/${day.number}/nieszpory`}>Nieszpory</Link>
                         </div>
                     </li>
                 ))}
