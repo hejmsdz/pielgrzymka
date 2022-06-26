@@ -4,7 +4,6 @@ module.exports = {
         siteUrl: `https://www.yourdomain.tld`
     },
     plugins: [
-        "gatsby-plugin-sass",
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
@@ -39,5 +38,7 @@ module.exports = {
             },
             __key: "pages"
         },
+        "gatsby-plugin-react-svg",
+        "gatsby-plugin-sass",
     ]
 };

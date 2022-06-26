@@ -1,7 +1,11 @@
 main {
     max-width: 600px;
-    margin: 1em auto;
-    padding: 1em;
+    margin: 16px auto;
+    padding: 16px;
+}
+
+* {
+    transition: background-color 0.5s, color 0.5s, font-size 0.2s;
 }
 
 .links {
@@ -50,5 +54,35 @@ section:not(.finalPrayer) {
 
     .response {
         font-style: italic;
+    }
+}
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    button {
+        border: none;
+        background: none;
+        padding: 8px;
+        margin: 0;
+        color: rgba(#808080, 0.2);
+        box-shadow: none;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+
+        &:hover, &:focus {
+            color: var(--primary);
+        }
+
+        svg {
+            width: 32px;
+            height: 32px;
+        }
     }
 }

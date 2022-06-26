@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import "@picocss/pico";
+import Toolbar from "../components/toolbar";
 // import "../styles/main.scss";
 
 const days = [
@@ -50,6 +51,7 @@ const IndexPage = () => {
     return (
         <main>
             <title>Śpiewnik</title>
+            <Toolbar />
             <h1>Śpiewnik</h1>
             <ul className="days">
                 {days.map((day) => (
