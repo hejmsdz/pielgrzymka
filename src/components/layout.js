@@ -14,9 +14,10 @@ import Magnificat from "./breviary/magnificat"
 import Intercessions from "./breviary/intercessions"
 import Prayer from "./breviary/prayer"
 import Dismissal from "./breviary/dismissal"
+import Lyrics from "./lyrics"
 import '../styles/main.scss';
 
-const shortcodes = { K, W, Opening, Hymn, Psalm, Canticle, Reading, Responsory, Benedictus, Magnificat, Intercessions, Prayer, Dismissal }
+const shortcodes = { K, W, Opening, Hymn, Psalm, Canticle, Reading, Responsory, Benedictus, Magnificat, Intercessions, Prayer, Dismissal, Lyrics }
 export default function Layout({ children }) {
     return (
         <MDXProvider components={shortcodes}>

@@ -8,13 +8,19 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
-                "icon": "src/images/icon.png"
+                name: `Śpiewnik`,
+                short_name: `Śpiewnik`,
+                start_url: `/`,
+                background_color: `#663399`,
+                theme_color: `#663399`,
+                display: `minimal-ui`,
+                icon: "src/images/icon.png"
             }
         },
         {
             resolve: `gatsby-plugin-offline`,
             options: {
-                precachePages: ['/dzien/*/*'],
+                precachePages: ['/dzien/*/*/'],
             },
         },
         {

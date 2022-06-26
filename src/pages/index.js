@@ -12,7 +12,7 @@ const days = [
     {
         number: 2,
         date: "2022-07-03",
-        celebration: "Nawiedzenie św. Elżbiety",
+        celebration: "Nawiedzenie Najświętszej Maryi Panny",
     },
     {
         number: 3,
@@ -27,17 +27,17 @@ const days = [
     {
         number: 5,
         date: "2022-07-06",
-        celebration: "Wspomnienie św. Piotra Apostoła",
+        celebration: "Święto katedry św. Piotra Apostoła",
     },
     {
         number: 6,
         date: "2022-07-07",
-        celebration: "Przemienienie na Górze Tabor",
+        celebration: "Święto Przemienienia Pańskiego",
     },
     {
         number: 7,
         date: "2022-07-08",
-        celebration: "Msza Wieczerzy Pańskiej",
+        celebration: "Wielki Czwartek Wieczerzy Pańskiej",
     },
     {
         number: 8,
@@ -59,7 +59,7 @@ const IndexPage = () => {
                         <div className="links">
                             <Link to={`/dzien/${day.number}/jutrznia`}>Jutrznia</Link>
                             <span className="divider" />
-                            <a href="#">Msza Święta</a>
+                            <Link to={`/dzien/${day.number}/msza`}>Msza Święta</Link>
                             <span className="divider" />
                             <Link href={`/dzien/${day.number}/nieszpory`}>Nieszpory</Link>
                         </div>
