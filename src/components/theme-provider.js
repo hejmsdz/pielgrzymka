@@ -29,8 +29,8 @@ const useFontSize = () => {
         document.documentElement.style.setProperty('--font-size', `${fontSize}px`);
     }, [fontSize]);
 
-    const zoomIn = useCallback(() => setFontSize(size => Number(size) + 1));
-    const zoomOut = useCallback(() => setFontSize(size => Number(size) - 1));
+    const zoomIn = useCallback(() => setFontSize(size => Number(size) + 1), [setFontSize]);
+    const zoomOut = useCallback(() => setFontSize(size => Number(size) - 1), [setFontSize]);
 
     return [Number(fontSize), zoomIn, zoomOut];
 };

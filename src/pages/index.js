@@ -2,7 +2,6 @@ import * as React from "react";
 import { Link } from "gatsby";
 import "@picocss/pico";
 import Toolbar from "../components/toolbar";
-// import "../styles/main.scss";
 
 const days = [
     {
