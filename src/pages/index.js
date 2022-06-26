@@ -27,7 +27,7 @@ const days = [
     {
         number: 5,
         date: "2022-07-06",
-        celebration: "Święto katedry św. Piotra Apostoła",
+        celebration: "Uroczystość Świętych Apostołów Piotra i Pawła",
     },
     {
         number: 6,
@@ -37,7 +37,7 @@ const days = [
     {
         number: 7,
         date: "2022-07-08",
-        celebration: "Wielki Czwartek Wieczerzy Pańskiej",
+        celebration: "Wielki Czwartek",
     },
     {
         number: 8,
