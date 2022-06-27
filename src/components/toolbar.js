@@ -11,10 +11,18 @@ const useServiceWorker = () => {
     const [state, setState] = useState('none');
 
     useEffect(() => {
-        navigator.serviceWorker.oncontrollerchange = () => {
+        if (typeof navigator === 'undefined' || !navigator.serviceWorker) {
+            return;
+        }
+
+        if (!navigator.serviceWorker.controller) {
             setState('loading');
-        };
-        navigator.serviceWorker.ready.then(() => setState('ready'));
+        }
+
+        navigator.serviceWorker.ready.then(() => {
+            console.log('controller ready!');
+            setState('ready');
+        });
     }, []);
 
     return state;
