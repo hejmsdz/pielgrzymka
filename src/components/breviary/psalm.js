@@ -2,7 +2,7 @@ import React from 'react';
 import Antiphon from './antiphon';
 import Multiline from '../multiline';
 
-export default ({ no, antiphon, children }) => console.log(children) || (
+export default ({ no, antiphon, children }) => (
     <section className='psalm'>
         <h2>Psalm {no}</h2>
         <Antiphon>{antiphon}</Antiphon>
