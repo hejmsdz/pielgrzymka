@@ -38,7 +38,9 @@ const Layout = ({ title, hasBackLink = true, children }) => (
     <head>
       <meta charSet="utf-8" />
       <title>{title}</title>
+      <link rel="manifest" href="/manifest.json" />
       <link rel="stylesheet" href="/styles/main.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
       <Toolbar />
