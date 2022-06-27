@@ -5,10 +5,11 @@ import IconLight from '../images/light.svg';
 import IconZoomIn from '../images/zoom_in.svg';
 import IconZoomOut from '../images/zoom_out.svg';
 import IconDone from '../images/done.svg';
+import IconOffline from '../images/offline.svg';
 import IconLoading from '../images/loading.svg';
 
 const useServiceWorker = () => {
-    const [state, setState] = useState('none');
+    const [state, setState] = useState('unavailable');
 
     useEffect(() => {
         if (typeof navigator === 'undefined' || !navigator.serviceWorker) {
@@ -20,7 +21,6 @@ const useServiceWorker = () => {
         }
 
         navigator.serviceWorker.ready.then(() => {
-            console.log('controller ready!');
             setState('ready');
         });
     }, []);
@@ -40,7 +40,8 @@ export default () => {
                 <button type="button" onClick={() => setTheme('dark')}><IconLight /></button>}
             <button type="button" onClick={zoomIn} disabled={fontSize >= 32}><IconZoomIn /></button>
             <button type="button" onClick={zoomOut} disabled={fontSize <= 10}><IconZoomOut /></button>
-            {serviceWorkerState === 'ready' && <button type="button"><IconDone /></button>}
+            {serviceWorkerState === 'unavailable' && <button type="button"><IconOffline /></button>}
+            {serviceWorkerState === 'ready' && <button type="button"><IconDone className="disappear" /></button>}
             {serviceWorkerState === 'loading' && <button type="button"><IconLoading className="spin" /></button>}
         </div>
     );
