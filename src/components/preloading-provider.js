@@ -9,6 +9,7 @@ export default ({ children }) => {
     const [fetched, setFetched] = useState(0);
 
     useEffect(() => {
+        return;
         const links = days.flatMap(day => day.links);
         setTotal(links.length);
         const promises = links
