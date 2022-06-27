@@ -46,4 +46,4 @@ export default ({ children }) => {
     );
 };
 
-export const useThemeContext = () => useContext(ThemeContext);
+export const useThemeContext = () => useContext(ThemeContext) || {};
