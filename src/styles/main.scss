@@ -70,9 +70,7 @@ section:not(.finalPrayer) {
     flex-direction: column;
     padding: 16px;
 
-    button {
-        border: none;
-        background: none;
+    > * {
         padding: 8px;
         margin: 0;
         color: rgba(#808080, 0.2);
@@ -80,6 +78,11 @@ section:not(.finalPrayer) {
         width: 48px;
         height: 48px;
         line-height: 48px;
+    }
+
+    button {
+        border: none;
+        background: none;
 
         &:hover, &:focus {
             color: var(--primary);
@@ -89,5 +92,14 @@ section:not(.finalPrayer) {
             width: 32px;
             height: 32px;
         }
+    }
+
+    .pie {
+        margin: 16px 8px 8px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        $color: rgba(#808080, 0.2);
+        background: conic-gradient($color 0deg, $color var(--angle), transparent var(--angle), transparent 360deg);
     }
 }

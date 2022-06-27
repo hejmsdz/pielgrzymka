@@ -1,74 +1,10 @@
-import React, { useEffect } from "react";
-import { Link, prefetchPathname } from "gatsby";
+import React from "react";
+import { Link } from "gatsby";
 import "@picocss/pico";
 import Toolbar from "../components/toolbar";
-
-const labels = {
-    jutrznia: 'Jutrznia',
-    msza: 'Msza Święta',
-    nieszpory: 'Nieszpory',
-};
-
-const defaultLinks = ['jutrznia', 'msza', 'nieszpory'];
-
-const days = [
-    {
-        number: 1,
-        date: "2022-07-02",
-        celebration: "Narodzenie Pańskie",
-    },
-    {
-        number: 2,
-        date: "2022-07-03",
-        celebration: "Nawiedzenie Najświętszej Maryi Panny",
-    },
-    {
-        number: 3,
-        date: "2022-07-04",
-        celebration: "Zmartwychwstanie Pańskie",
-    },
-    {
-        number: 4,
-        date: "2022-07-05",
-        celebration: "Wspomnienie św. Marty, Marii i Łazarza",
-    },
-    {
-        number: 5,
-        date: "2022-07-06",
-        celebration: "Uroczystość Świętych Apostołów Piotra i Pawła",
-    },
-    {
-        number: 6,
-        date: "2022-07-07",
-        celebration: "Święto Przemienienia Pańskiego",
-    },
-    {
-        number: 7,
-        date: "2022-07-08",
-        celebration: "Wielki Czwartek",
-    },
-    {
-        number: 8,
-        date: "2022-07-09",
-        celebration: "Emaus",
-    },
-].map(day => ({
-    ...day,
-    links: (day.links || defaultLinks).map(key => ({
-        key,
-        label: labels[key],
-        path: `/dzien/${day.number}/${key}`,
-    })),
-}));
+import { days } from '../contents';
 
 const IndexPage = () => {
-    useEffect(() => {
-        const links = days.flatMap(day => day.links);
-        const promises = links
-            .map(link => console.log('fetching', link.path) || prefetchPathname(link.path)
-                .then(() => console.log('DONE', link.path)));
-        Promise.all(promises).then(() => console.log('all done!'));
-    }, []);
     const today = new Date();
 
     return (
