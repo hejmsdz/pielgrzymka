@@ -1,7 +1,15 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import React, { useEffect } from "react";
+import { Link, prefetchPathname } from "gatsby";
 import "@picocss/pico";
 import Toolbar from "../components/toolbar";
+
+const labels = {
+    jutrznia: 'Jutrznia',
+    msza: 'Msza Święta',
+    nieszpory: 'Nieszpory',
+};
+
+const defaultLinks = ['jutrznia', 'msza', 'nieszpory'];
 
 const days = [
     {
@@ -44,9 +52,21 @@ const days = [
         date: "2022-07-09",
         celebration: "Emaus",
     },
-];
+].map(day => ({
+    ...day,
+    links: (day.links || defaultLinks).map(key => ({
+        key,
+        label: labels[key],
+        path: `/dzien/${day.number}/${key}`,
+    })),
+}));
 
 const IndexPage = () => {
+    useEffect(() => {
+        days.flatMap(day => day.links).forEach(link => {
+            prefetchPathname(link.path);
+        });
+    }, []);
     const today = new Date();
 
     return (
@@ -64,11 +84,12 @@ const IndexPage = () => {
                             <strong className="day">Dzień {day.number}</strong>
                             <div className="celebration">{day.celebration}</div>
                             <div className="links">
-                                <Link to={`/dzien/${day.number}/jutrznia`}>Jutrznia</Link>
-                                <span className="divider" />
-                                <Link to={`/dzien/${day.number}/msza`}>Msza Święta</Link>
-                                <span className="divider" />
-                                <Link href={`/dzien/${day.number}/nieszpory`}>Nieszpory</Link>
+                                {day.links.map((link, index) => (
+                                    <>
+                                        {index > 0 && (<span className="divider" />)}
+                                        <Link key={link.key} to={link.path}>{link.label}</Link>
+                                    </>
+                                ))}
                             </div>
                         </li>
                     );
