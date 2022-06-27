@@ -1,13 +1,15 @@
 import React from 'react';
+import K from '../k';
+import W from '../w';
 
 export default ({ a, b, c }) => (
     <section>
         <h2>Responsorium krótkie</h2>
-        <div class="k">{a}{b && ` * ${b}`}</div>
-        <div class="w">{a}{b && ` / ${b}`}</div>
-        <div class="k">{c}</div>
-        <div class="w">{b || a}</div>
-        <div class="k">Chwała Ojcu i Synowi, i Duchowi Świętemu.</div>
-        <div class="w">{a}{b && ` / ${b}`}</div>
+        <K>{a}{b && ` * ${b}`}</K>
+        <W>{a}{b && ` / ${b}`}</W>
+        <K>{c}</K>
+        <W>{b || a}</W>
+        <K>Chwała Ojcu i Synowi, i Duchowi Świętemu.</K>
+        <W>{a}{b && ` / ${b}`}</W>
     </section>
 );

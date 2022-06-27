@@ -63,9 +63,11 @@ const days = [
 
 const IndexPage = () => {
     useEffect(() => {
-        days.flatMap(day => day.links).forEach(link => {
-            prefetchPathname(link.path);
-        });
+        const links = days.flatMap(day => day.links);
+        const promises = links
+            .map(link => console.log('fetching', link.path) || prefetchPathname(link.path)
+                .then(() => console.log('DONE', link.path)));
+        Promise.all(promises).then(() => console.log('all done!'));
     }, []);
     const today = new Date();
 
@@ -85,10 +87,10 @@ const IndexPage = () => {
                             <div className="celebration">{day.celebration}</div>
                             <div className="links">
                                 {day.links.map((link, index) => (
-                                    <>
+                                    <React.Fragment key={link.key}>
                                         {index > 0 && (<span className="divider" />)}
-                                        <Link key={link.key} to={link.path}>{link.label}</Link>
-                                    </>
+                                        <Link to={link.path}>{link.label}</Link>
+                                    </React.Fragment>
                                 ))}
                             </div>
                         </li>
