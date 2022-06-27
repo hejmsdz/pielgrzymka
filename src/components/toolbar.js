@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useThemeContext } from '../components/theme-provider';
 import IconDark from '../images/dark.svg';
 import IconLight from '../images/light.svg';
 import IconZoomIn from '../images/zoom_in.svg';
 import IconZoomOut from '../images/zoom_out.svg';
-import { usePreloadingContext } from './preloading-provider';
+import IconDone from '../images/done.svg';
+import IconLoading from '../images/loading.svg';
 
+const useServiceWorker = () => {
+    const [state, setState] = useState('none');
+
+    useEffect(() => {
+        navigator.serviceWorker.oncontrollerchange = () => {
+            setState('loading');
+        };
+        navigator.serviceWorker.ready.then(() => setState('ready'));
+    }, []);
+
+    return state;
+};
 
 export default () => {
     const { theme, setTheme, fontSize, zoomIn, zoomOut } = useThemeContext();
-    const { total, fetched } = usePreloadingContext();
+    const serviceWorkerState = useServiceWorker();
 
     return (
         <div className='toolbar'>
@@ -19,7 +32,8 @@ export default () => {
                 <button type="button" onClick={() => setTheme('dark')}><IconLight /></button>}
             <button type="button" onClick={zoomIn} disabled={fontSize >= 32}><IconZoomIn /></button>
             <button type="button" onClick={zoomOut} disabled={fontSize <= 10}><IconZoomOut /></button>
-            <div class="pie" style={{ '--angle': `${(fetched / total) * 360}deg` }} />
+            {serviceWorkerState === 'ready' && <button type="button"><IconDone /></button>}
+            {serviceWorkerState === 'loading' && <button type="button"><IconLoading className="spin" /></button>}
         </div>
     );
 };
