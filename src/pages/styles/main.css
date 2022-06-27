@@ -90,7 +90,7 @@ section:not(.finalPrayer) {
     box-shadow: none;
     width: 48px;
     height: 48px;
-    /* line-height: 48px; */
+    line-height: 48px;
 }
 
 .toolbar button span {
