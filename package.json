@@ -1,37 +1,15 @@
 {
-    "name": "izrael",
-    "version": "1.0.0",
-    "private": true,
-    "description": "izrael",
-    "author": "Mikołaj Rozwadowski",
-    "keywords": [
-        "gatsby"
-    ],
     "scripts": {
-        "develop": "gatsby develop --host=0.0.0.0",
-        "start": "gatsby develop",
-        "build": "gatsby build",
-        "serve": "gatsby serve",
-        "clean": "gatsby clean"
-    },
-    "dependencies": {
-        "@mdx-js/mdx": "^1.6.22",
-        "@mdx-js/react": "^1.6.22",
-        "@picocss/pico": "^1.5.3",
-        "gatsby": "^4.17.1",
-        "gatsby-plugin-manifest": "^4.17.0",
-        "gatsby-plugin-mdx": "^3.17.0",
-        "gatsby-plugin-offline": "^5.17.0",
-        "gatsby-plugin-sass": "^5.17.0",
-        "gatsby-source-filesystem": "^4.17.0",
-        "react": "^17.0.0",
-        "react-dom": "^17.0.0",
-        "sass": "^1.53.0"
+        "start": "charge serve src/pages",
+        "build:html": "charge build src/pages dist",
+        "build:sw": "workbox generateSW workbox-config.js",
+        "build": "npm run build:html && npm run build:sw"
     },
     "devDependencies": {
-        "@notionhq/client": "^1.0.4",
-        "gatsby-plugin-react-svg": "^3.1.0",
-        "google-spreadsheet": "^3.3.0",
-        "prettier": "2.7.1"
+        "@static/charge": "^1.7.0",
+        "workbox-cli": "^6.5.3"
+    },
+    "dependencies": {
+        "@picocss/pico": "^1.5.3"
     }
 }

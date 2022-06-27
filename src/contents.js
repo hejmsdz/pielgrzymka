@@ -52,6 +52,6 @@ export const days = [
     links: (day.links || defaultLinks).map(key => ({
         key,
         label: labels[key],
-        path: `/dzien/${day.number}/${key}`,
+        path: `/dzien/${day.number}/${key}.html`,
     })),
 }));

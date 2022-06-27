@@ -1,0 +1,126 @@
+@import '@picocss/pico';
+
+main {
+    max-width: 600px;
+    margin: 16px auto;
+    padding: 16px;
+}
+
+* {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.past {
+    opacity: 0.3;
+    filter: grayscale(1);
+}
+
+.links .divider::after {
+    content: ' • ';
+}
+
+section:not(.finalPrayer) {
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.k::before {
+    content: 'K. ';
+    color: var(--del-color);
+    display: inline-block;
+    width: 1.5em;
+}
+
+.w::before {
+    content: 'W. ';
+    color: var(--del-color);
+    display: inline-block;
+    width: 1.5em;
+}
+
+.antiphon {
+    font-style: italic;
+}
+
+.verse {
+    margin-bottom: 0.5em;
+
+}
+
+.verse:nth-of-type(odd) {
+    margin-left: 1em;
+}
+
+.comment {
+    opacity: 0.5;
+}
+
+.intercession .response {
+    font-style: italic;
+}
+
+/*
+.toolbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    > * {
+        padding: 8px;
+        margin: 0;
+        color: rgba(#808080, 0.2);
+        box-shadow: none;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+    }
+
+    button {
+        border: none;
+        background: none;
+
+        &:hover,
+        &:focus {
+            color: var(--primary);
+        }
+
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+*/
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.spin {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.disappear {
+    animation: disappear 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
