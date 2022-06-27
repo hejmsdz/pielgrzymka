@@ -38,6 +38,9 @@ module.exports = {
             resolve: `gatsby-plugin-offline`,
             options: {
                 precachePages: ['/dzien/*/*'],
+                workboxConfig: {
+                    globPatterns: ['*.html', '*.js', '*.json'],
+                },
             },
         },
     ]
