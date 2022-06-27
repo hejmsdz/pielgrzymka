@@ -14,7 +14,7 @@ import Intercessions from "./breviary/intercessions";
 import Prayer from "./breviary/prayer";
 import Dismissal from "./breviary/dismissal";
 import Lyrics from "./lyrics";
-// import Toolbar from "./toolbar";
+import Toolbar from "./toolbar";
 
 const components = {
   K,
@@ -41,8 +41,8 @@ const Layout = ({ title, hasBackLink = true, children }) => (
       <link rel="stylesheet" href="/styles/main.css" />
     </head>
     <body>
+      <Toolbar />
       <main>
-        {/* <Toolbar /> */}
         {hasBackLink && <a href="/">&larr; Wróć do spisu treści</a>}
         <MDXProvider components={components}>{children}</MDXProvider>
         {hasBackLink && <a href="/">&larr; Wróć do spisu treści</a>}

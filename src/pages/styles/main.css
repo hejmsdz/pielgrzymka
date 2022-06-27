@@ -6,8 +6,8 @@ main {
     padding: 16px;
 }
 
-* {
-    transition: background-color 0.5s, color 0.5s;
+html[data-theme] * {
+    transition: background-color 1s, color 1s;
 }
 
 .past {
@@ -59,7 +59,6 @@ section:not(.finalPrayer) {
     font-style: italic;
 }
 
-/*
 .toolbar {
     position: absolute;
     top: 0;
@@ -68,6 +67,7 @@ section:not(.finalPrayer) {
     flex-direction: column;
     padding: 16px;
 
+    /*
     > * {
         padding: 8px;
         margin: 0;
@@ -78,22 +78,43 @@ section:not(.finalPrayer) {
         line-height: 48px;
     }
 
-    button {
-        border: none;
-        background: none;
-
-        &:hover,
-        &:focus {
-            color: var(--primary);
-        }
-
-        svg {
-            width: 32px;
-            height: 32px;
-        }
-    }
+    */
 }
-*/
+
+.toolbar button {
+    border: none;
+    background: none;
+    padding: 8px;
+    margin: 0;
+    color: rgba(128, 128, 128, 0.2);
+    box-shadow: none;
+    width: 48px;
+    height: 48px;
+    /* line-height: 48px; */
+}
+
+.toolbar button span {
+    margin: 0;
+    padding: 0;
+}
+
+.toolbar button:hover,
+.toolbar button:focus {
+    color: var(--primary);
+}
+
+.toolbar button svg {
+    width: 32px;
+    height: 32px;
+}
+
+html[data-theme=dark] .iconDark {
+    display: none;
+}
+
+html:not([data-theme=dark]) .iconLight {
+    display: none;
+}
 
 @keyframes spin {
     from {

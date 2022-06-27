@@ -1,48 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { useThemeContext } from '../components/theme-provider';
-import IconDark from '../images/dark.svg';
-import IconLight from '../images/light.svg';
-import IconZoomIn from '../images/zoom_in.svg';
-import IconZoomOut from '../images/zoom_out.svg';
-import IconDone from '../images/done.svg';
-import IconOffline from '../images/offline.svg';
-import IconLoading from '../images/loading.svg';
+import IconDark from "../images/dark.svg";
+import IconLight from "../images/light.svg";
+import IconZoomIn from "../images/zoom_in.svg";
+import IconZoomOut from "../images/zoom_out.svg";
+import IconDone from "../images/done.svg";
+import IconOffline from "../images/offline.svg";
+import IconLoading from "../images/loading.svg";
 
-const useServiceWorker = () => {
-    const [state, setState] = useState('unavailable');
-
-    useEffect(() => {
-        if (typeof navigator === 'undefined' || !navigator.serviceWorker) {
-            return;
-        }
-
-        if (!navigator.serviceWorker.controller) {
-            setState('loading');
-        }
-
-        navigator.serviceWorker.ready.then(() => {
-            setState('ready');
-        });
-    }, []);
-
-    return state;
-};
-
-export default () => {
-    const { theme, setTheme, fontSize, zoomIn, zoomOut } = useThemeContext();
-    const serviceWorkerState = useServiceWorker();
-
-    return (
-        <div className='toolbar'>
-            {theme === 'dark' ?
-                <button type="button" onClick={() => setTheme('light')}><IconDark /></button>
-                :
-                <button type="button" onClick={() => setTheme('dark')}><IconLight /></button>}
-            <button type="button" onClick={zoomIn} disabled={fontSize >= 32}><IconZoomIn /></button>
-            <button type="button" onClick={zoomOut} disabled={fontSize <= 10}><IconZoomOut /></button>
-            {serviceWorkerState === 'unavailable' && <button type="button"><IconOffline /></button>}
-            {serviceWorkerState === 'ready' && <button type="button"><IconDone className="disappear" /></button>}
-            {serviceWorkerState === 'loading' && <button type="button"><IconLoading className="spin" /></button>}
-        </div>
-    );
-};
+export default () => (
+  <div className="toolbar">
+    <button type="button" id="themeSwitch">
+      <div className="iconLight">
+        <IconLight />
+      </div>
+      <div className="iconDark">
+        <IconDark />
+      </div>
+    </button>
+    <button type="button" id="zoomIn">
+      <IconZoomIn />
+    </button>
+    <button type="button" id="zoomOut">
+      <IconZoomOut />
+    </button>
+  </div>
+);
