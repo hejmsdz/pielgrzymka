@@ -9,12 +9,15 @@ function registerServiceWorker() {
 }
 
 function setupThemeSwitch() {
-    const htmlData = document.querySelector('html').dataset;
+    const html = document.querySelector('html');
+    const htmlData = html.dataset;
     const button = document.getElementById('themeSwitch');
 
     if (localStorage.theme) {
         htmlData.theme = localStorage.theme;
     }
+
+    setTimeout(() => html.classList.add('loaded'));
 
     button.addEventListener('click', () => {
         const isDark = htmlData.theme === 'dark';
@@ -30,21 +33,23 @@ function setupZoom() {
     const zoomOutButton = document.getElementById('zoomOut');
     let fontSize = Number(localStorage.fontSize) || 18;
 
-    const setFontSize = () => docStyle.setProperty('--font-size', `${fontSize}px`);
+    const setFontSize = (diff = 0) => {
+        fontSize += diff;
+        localStorage.fontSize = fontSize;
+        docStyle.setProperty('--font-size', `${fontSize}px`)
+    };
 
     setFontSize();
 
     zoomInButton.addEventListener('click', () => {
         if (fontSize < 32) {
-            fontSize++;
-            setFontSize();
+            setFontSize(+1);
         }
     });
 
     zoomOutButton.addEventListener('click', () => {
         if (fontSize > 10) {
-            fontSize--;
-            setFontSize();
+            setFontSize(-1);
         }
     });
 

@@ -6,11 +6,11 @@ body > main {
     padding: 16px;
 }
 
-html[data-theme] {
+html.loaded {
     transition: background-color 0.5s;
 }
 
-html[data-theme] * {
+html.loaded * {
     transition: background-color 0.5s, color 0.5s;
 }
 
