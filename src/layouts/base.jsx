@@ -11,6 +11,7 @@ const Layout = ({
       <title>{title}</title>
       <link rel="manifest" href="/manifest.json" />
       <link rel="stylesheet" href="/styles/main.css" />
+      <link rel="icon" href="/images/icon.svg" type="image/svg+xml" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#bda780" />
     </head>
