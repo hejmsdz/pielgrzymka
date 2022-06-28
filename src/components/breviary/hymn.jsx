@@ -1,12 +1,10 @@
-import Multiline from '../multiline';
+import Multiline from "../multiline";
 
 export default ({ children }) => (
-    <section>
-        <h2>Hymn</h2>
-        {React.Children.map(children, verse => (
-            <p className='verse'>
-                <Multiline>{verse}</Multiline>
-            </p>
-        ))}
-    </section>
+  <section>
+    <h2>Hymn</h2>
+    {React.Children.map(children, (verse) => (
+      <Multiline className="verse">{verse}</Multiline>
+    ))}
+  </section>
 );

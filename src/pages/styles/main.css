@@ -46,12 +46,11 @@ section:not(.finalPrayer) {
     font-style: italic;
 }
 
-.verse {
+.psalm .verse {
     margin-bottom: 0.5em;
-
 }
 
-.verse:nth-of-type(odd) {
+.psalm .verse:nth-of-type(odd) {
     margin-left: 1em;
 }
 
