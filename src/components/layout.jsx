@@ -33,7 +33,7 @@ const components = {
   Lyrics,
 };
 
-const Layout = ({ title, hasBackLink = true, children }) => (
+const Layout = ({ title = "Ziemia Święta", hasBackLink = true, children }) => (
   <html lang="pl">
     <head>
       <meta charSet="utf-8" />
