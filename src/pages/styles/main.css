@@ -6,8 +6,12 @@ body > main {
     padding: 16px;
 }
 
+html[data-theme] {
+    transition: background-color 0.5s;
+}
+
 html[data-theme] * {
-    transition: background-color 1s, color 1s;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 .past {
