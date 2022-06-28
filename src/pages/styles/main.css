@@ -1,6 +1,7 @@
 @import '@picocss/pico';
 
-body > main {
+body > main,
+.innerHeader {
     max-width: 600px;
     margin: 16px auto;
     padding: 16px;
@@ -12,6 +13,35 @@ html.loaded {
 
 html.loaded * {
     transition: background-color 0.5s, color 0.5s;
+}
+
+.header {
+    background-image: linear-gradient(#bda780, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(/images/background.png);
+    background-position: 50% 40%;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    height: 550px;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.innerHeader {
+    text-align: center;
+}
+
+.innerHeader h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.innerHeader h1 small {
+    display: block;
+    font-size: 0.4em;
+    font-weight: normal;
 }
 
 .past {
@@ -69,19 +99,6 @@ section:not(.finalPrayer) {
     display: flex;
     flex-direction: column;
     padding: 16px;
-
-    /*
-    > * {
-        padding: 8px;
-        margin: 0;
-        color: rgba(#808080, 0.2);
-        box-shadow: none;
-        width: 48px;
-        height: 48px;
-        line-height: 48px;
-    }
-
-    */
 }
 
 .toolbar button {
@@ -94,6 +111,10 @@ section:not(.finalPrayer) {
     width: 48px;
     height: 48px;
     line-height: 48px;
+}
+
+.mainPage .toolbar button {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .toolbar button span {
