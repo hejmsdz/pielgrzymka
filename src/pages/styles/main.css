@@ -1,6 +1,6 @@
 @import '@picocss/pico';
 
-main {
+body > main {
     max-width: 600px;
     margin: 16px auto;
     padding: 16px;
