@@ -4,7 +4,7 @@ module.exports = {
         '**/*.{html,css,js,jpg}'
     ],
     swDest: 'dist/sw.js',
-    dontCacheBustURLsMatching: /\.html$/,
+    // dontCacheBustURLsMatching: /\.html$/,
     ignoreURLParametersMatching: [
         /^utm_/,
         /^fbclid$/
