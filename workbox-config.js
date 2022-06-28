@@ -1,7 +1,7 @@
 module.exports = {
     globDirectory: 'dist/',
     globPatterns: [
-        '**/*.{html,css,js}'
+        '**/*.{html,css,js,jpg}'
     ],
     swDest: 'dist/sw.js',
     dontCacheBustURLsMatching: /\.html$/,
