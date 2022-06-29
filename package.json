@@ -6,7 +6,10 @@
         "build": "npm run build:html && npm run build:sw"
     },
     "devDependencies": {
+        "@notionhq/client": "^1.0.4",
         "@static/charge": "^1.7.0",
+        "dotenv": "^16.0.1",
+        "google-spreadsheet": "^3.3.0",
         "workbox-cli": "^6.5.3"
     },
     "dependencies": {
