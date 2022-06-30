@@ -1,5 +1,10 @@
 @import '@picocss/pico';
 
+@font-face {
+    font-family: 'Caeciliae';
+    src: url('/fonts/Caeciliae-Regular.ttf');
+}
+
 body > main,
 .innerHeader {
     max-width: 600px;
@@ -174,4 +179,14 @@ html:not([data-theme=dark]) .iconLight {
     animation: disappear 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 3s;
+}
+
+.chant {
+    font-family: 'Caeciliae';
+    font-size: 64px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    padding-bottom: 16px;
+    background: linear-gradient(var(--background-color), var(--background-color) 60%, transparent);
 }
