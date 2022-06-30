@@ -12,6 +12,7 @@ const Layout = ({
       <link rel="manifest" href="/manifest.json" />
       <link rel="stylesheet" href="/styles/main.css" />
       <link rel="icon" href="/images/icon.svg" type="image/svg+xml" />
+      <link rel="apple-touch-icon" href="/images/icon-192.png" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#bda780" />
     </head>
