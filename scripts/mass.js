@@ -108,10 +108,15 @@ export const layout = makeLayout();
 # Msza Święta\n\n`;
         titles.forEach(title => {
             mdx += `## ${title}\n`;
-            mdx += `<Lyrics verses={${JSON.stringify(lyrics[title], null, 2)}} />\n\n`;
+            mdx += `<Lyrics>\n\n`;
+            lyrics[title].forEach(verse => {
+                mdx += verse;
+                mdx += '\n\n';
+            });
+            mdx += `</Lyrics>\n\n`;
         });
 
-        writeFileSync(joinPath(__dirname, '../src/pages/dzien', `${day}`, 'msza.html.mdx'), mdx);
+        writeFileSync(joinPath(__dirname, '../src/dzien', `${day}`, 'msza.html.mdx'), mdx);
     });
 }
 
