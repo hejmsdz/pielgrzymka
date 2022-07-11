@@ -1,7 +1,7 @@
 {
     "scripts": {
-        "start": "charge serve src/pages",
-        "build:html": "charge build src/pages dist",
+        "start": "charge serve src",
+        "build:html": "charge build src dist",
         "build:sw": "workbox generateSW workbox-config.js",
         "build": "npm run build:html && npm run build:sw"
     },

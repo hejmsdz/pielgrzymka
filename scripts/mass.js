@@ -102,7 +102,7 @@ async function main() {
     const lyrics = await getLyrics(flatTitles);
 
     titlesByDay.forEach(({ day, titles }) => {
-        let mdx = `import makeLayout from "../../../layouts/content";
+        let mdx = `import makeLayout from "../../layouts/content";
 export const layout = makeLayout();
 
 # Msza Święta\n\n`;
