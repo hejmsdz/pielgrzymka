@@ -1,7 +1,7 @@
 import Canticle from './canticle';
 
-export default ({ antiphon }) => (
-    <Canticle title="Pieśń Maryi" antiphon={antiphon}>
+export default ({ antiphon, tone }) => (
+    <Canticle title="Pieśń Maryi" antiphon={antiphon} tone={tone}>
         {
             `Wielbi dusza moja Pana *
 i raduje się duch mój w Bogu, Zbawicielu moim.

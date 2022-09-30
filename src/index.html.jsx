@@ -3,14 +3,14 @@ import { days } from "./contents.js";
 
 export default () => (
   <Layout hasBackLink={false} bodyClassName="mainPage">
-    <header className="header">
+    {/* <header className="header">
       <div className="innerHeader">
         <h1>
           Ziemia Święta
           <small>pielgrzymkowy śpiewnik i brewiarz</small>
         </h1>
       </div>
-    </header>
+    </header> */}
     <main>
       <ul className="days">
         {days.map((day) => (

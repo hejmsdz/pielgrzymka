@@ -1,7 +1,7 @@
 import Canticle from './canticle';
 
-export default ({ antiphon }) => (
-    <Canticle title="Pieśń Zachariasza" antiphon={antiphon}>
+export default ({ antiphon, tone }) => (
+    <Canticle title="Pieśń Zachariasza" antiphon={antiphon} tone={tone}>
         {
             `Błogosławiony Pan, Bóg Izraela, *
 bo lud swój nawiedził i wyzwolił.

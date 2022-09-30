@@ -3,7 +3,7 @@
         "start": "charge serve src",
         "build:html": "charge build src dist",
         "build:sw": "workbox generateSW workbox-config.js",
-        "build": "npm run build:html && npm run build:sw"
+        "build": "npm run build:html"
     },
     "devDependencies": {
         "@notionhq/client": "^1.0.4",
